@@ -10,6 +10,8 @@ jobs:
         run: sudo apt update && sudo apt install -y build-essential
       - name: Build with Make
         run: make
+      - name: Run Test
+        run: ./calcunix
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
