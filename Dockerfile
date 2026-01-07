@@ -1,24 +1,18 @@
-# Build stage with GCC
 FROM gcc:latest AS builder
 
 WORKDIR /CalcUnix
 
 COPY . .
 
-# Build the shared library and binary
 RUN make
 
-# Runtime stage: scratch (empty container)
-FROM scratch
+FROM alpine:latest
 
 WORKDIR /CalcUnix
 
-# Copy the built binary and shared library
 COPY --from=builder /CalcUnix/calcunix .
 COPY --from=builder /CalcUnix/Calculate.so .
 
-# Ensure the binary is executable
-RUN ["chmod", "+x", "calcunix"]
+RUN chmod +x calcunix
 
-# Run the calculator
 CMD ["./calcunix"]
