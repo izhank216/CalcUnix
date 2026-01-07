@@ -2,7 +2,7 @@
 
 A simple CLI-based Linux calculator.
 
-## Run from Docker (still requires Linux)
+## Run from Docker (If you want to run on Windows or Docker itself.)
 ```bash
 docker run -it --rm izhank216/calcunix:latest
 ```
