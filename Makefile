@@ -6,6 +6,7 @@ SRC=src
 OBJ=Calculate.so
 
 all: $(OBJ) $(TARGET)
+	@chmod +x $(TARGET)
 
 $(OBJ): $(SRC)/Calculate.c
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
