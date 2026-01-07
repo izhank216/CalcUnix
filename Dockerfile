@@ -18,7 +18,7 @@ COPY --from=builder /CalcUnix/calcunix .
 COPY --from=builder /CalcUnix/Calculate.so .
 
 # Ensure the binary is executable
-COPY --from=builder /CalcUnix/calcunix ./calcunix
-COPY --from=builder /CalcUnix/Calculate.so ./Calculate.so
+RUN ["chmod", "+x", "calcunix"]
 
-CMD ["/calcunix"]
+# Run the calculator
+CMD ["./calcunix"]
