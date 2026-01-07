@@ -7,7 +7,7 @@ A simple CLI-based Linux calculator.
 **1.** Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/CalcUnix.git
+git clone https://github.com/izhank216/CalcUnix.git
 cd CalcUnix
 ```
 
