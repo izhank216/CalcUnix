@@ -21,4 +21,4 @@ COPY --from=builder /CalcUnix/Calculate.so .
 COPY --from=builder /CalcUnix/calcunix ./calcunix
 COPY --from=builder /CalcUnix/Calculate.so ./Calculate.so
 
-CMD ["/CalcUnix/calcunix"]
+CMD ["/calcunix"]
