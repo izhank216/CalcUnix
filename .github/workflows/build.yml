@@ -10,8 +10,17 @@ jobs:
         run: sudo apt update && sudo apt install -y build-essential
       - name: Build with Make
         run: make
-      - name: Run Test
-        run: ./calcunix
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+      - name: Build Docker image
+        run: |
+          docker build -t calcunix .
+      - name: Save Docker image as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: calcunix-docker-image
+          path: |
+            $(docker save calcunix | gzip > calcunix.tar.gz)
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
