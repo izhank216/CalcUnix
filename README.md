@@ -2,6 +2,13 @@
 
 A simple CLI-based Linux calculator.
 
+## Run from Docker (still requires Linux)
+```bash
+docker run -it --rm izhank216/calcunix:latest
+```
+
+
+
 ## Build/Compile
 
 **1.** Clone the repository:
